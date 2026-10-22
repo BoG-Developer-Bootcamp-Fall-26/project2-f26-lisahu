@@ -1,0 +1,1 @@
+//arriving, scheduled, northbound, southbound (or east/west)
