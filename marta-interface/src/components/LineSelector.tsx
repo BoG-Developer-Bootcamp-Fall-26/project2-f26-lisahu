@@ -1,8 +1,8 @@
-export const lines = [
-    { color: "gold", cn: "bg-amber-300", disp: "Gold" },
-    { color: "red", cn: "bg-red-600", disp: "Red" },
-    { color: "blue", cn: "bg-blue-700", disp: "Blue" },
-    { color: "green", cn: "bg-green-900", disp: "Green" },
+const lines = [
+    { color: "gold", cn: "bg-amber-300", disp: "Gold", activecn: "bg-amber-500" },
+    { color: "red", cn: "bg-red-600", disp: "Red", activecn: "bg-red-800" },
+    { color: "blue", cn: "bg-blue-700", disp: "Blue", activecn: "bg-blue-900" },
+    { color: "green", cn: "bg-green-700", disp: "Green", activecn: "bg-green-900" },
 ]
 
 export default function LineSelector({ color, handler }) {
@@ -11,7 +11,7 @@ export default function LineSelector({ color, handler }) {
             {lines.map((line) => (
                 <button
                     key={line.color}
-                    className={line.cn}
+                    className={color === line.color ? line.activecn : line.cn}
                     onClick={() => {
                         handler(line.color);
                     }}

@@ -44,7 +44,7 @@ export default function LinesPage() {
             <h1>{currColor}</h1>
             {loading
                 ? <div>Loading...</div>
-                : <div className="flex flex-row">
+                : <div className="flex flex-row space-x-5">
                     <NavBar color={currColor} data={stations} handler={handleSelect} />
                     <TrainList color={currColor} data={selected.length === 0 ? trains : trains.filter(t => selected.some(s => s.toUpperCase() === t.STATION))} />
                 </div>
