@@ -5,7 +5,7 @@ export default function TrainList({ color, data }) {
     return (
         <div>
             {data.map((t) => (
-                <Train key={`${t.TRAIN_ID}-${t.EVENT_TIME}`} color={color} train={t}/>
+                <Train key={t} color={color} train={t}/>
             ))}
         </div>
     )

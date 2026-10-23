@@ -1,8 +1,13 @@
 //arriving, scheduled, northbound, southbound (or east/west)
 
-export default function NavBar({ color, data }) {
+import StationButton from "./StationButton";
+
+export default function NavBar({ color, data, handler }) {
     return (
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-col">
+            {data.map((s) => (
+                <StationButton key={`${s}-${color}`} station={s} handler={handler} />
+            ))}
         </div>
     )
 }
