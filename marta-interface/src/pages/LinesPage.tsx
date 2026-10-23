@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import NavBar from "../components/Navbar";
 import TrainList from "../components/TrainList";
 import LineSelector from "../components/LineSelector";
+import { useLocation } from 'react-router-dom';
 
 const url = "https://marta-bootcamp-api.vercel.app";
 
 export default function LinesPage() {
-    const [currColor, setColor] = useState("green");
+    const location = useLocation();
+    const { line } = location.state || {};
+
+    const [currColor, setColor] = useState(line ?? "gold");
     const [trains, setTrains] = useState([]);
     const [stations, setStations] = useState([]);
     const [selected, setSelected] = useState([]);
